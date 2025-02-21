@@ -3,25 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Υποτακτική Σύνδεση (Α' Γυμνασίου)</title>
+    <title>Υποτακτική Σύνδεση Προτάσεων</title>
     <style>
         body {
             font-family: 'Comic Sans MS', cursive, sans-serif;
-            line-height: 1.6;
+            background-color: #000000; /* Μαύρο φόντο */
+            color: #ffffff; /* Λευκό κείμενο */
             margin: 0;
             padding: 0;
-            background-color: #000000; /* Μαύρο φόντο */
-            color: #ffffff; /* Λευκό χρώμα για το κύριο κείμενο */
+            line-height: 1.6;
         }
         header {
-            background-color: transparent;
+            background-color: #333333; /* Σκούρο γκρι */
+            padding: 20px;
+            text-align: center;
+            border-bottom: 5px solid #FFD700; /* Χρυσή γραμμή */
+        }
+        header h1 {
             color: #FFD700; /* Χρυσό χρώμα */
-            padding: 10px;
+            font-size: 2.5em;
+            margin: 0;
+        }
+        header p {
+            color: #00FF00; /* Πράσινο χρώμα */
+            font-size: 1.2em;
+            margin: 5px 0 0;
+        }
+        section {
+            padding: 20px;
+        }
+        h2 {
+            color: #FFD700; /* Χρυσό χρώμα */
+            font-size: 2em;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .quiz-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .question {
+            background-color: #444444; /* Σκούρο γκρι */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); /* Λευκή σκιά */
+            width: 300px;
             text-align: center;
         }
-        h1 {
-            color: #FFD700; /* Χρυσό χρώμα */
-            font-weight: bold;
+        .question p {
+            color: #00FF00; /* Πράσινο χρώμα */
+            font-size: 1.1em;
+            margin-bottom: 15px;
+        }
+        .question button {
+            background-color: #00BFFF; /* Γαλάζιο χρώμα */
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+        }
+        .question button:hover {
+            background-color: #1E90FF; /* Σκούρο γαλάζιο */
+        }
+        .question button:active {
+            transform: scale(0.95);
+        }
+        .correct {
+            background-color: #00FF00 !important; /* Πράσινο για σωστή απάντηση */
+        }
+        .incorrect {
+            background-color: #FF0000 !important; /* Κόκκινο για λάθος απάντηση */
         }
         .container {
             max-width: 800px;
@@ -54,10 +112,10 @@
             margin-top: 10px;
             font-weight: bold;
         }
-        .correct {
+        .correct-feedback {
             color: #00FF00; /* Πράσινο χρώμα */
         }
-        .incorrect {
+        .incorrect-feedback {
             color: #FF0000; /* Κόκκινο χρώμα */
         }
         .hidden {
@@ -71,10 +129,107 @@
     </style>
 </head>
 <body>
-
     <header>
-        <h1>Υποτακτική Σύνδεση (Α' Γυμνασίου)</h1>
+        <p>Δημιουργία: Παναγιώτης Δόμβρος 2025 (CC BY-NC)</p>
+        <h1>Υποτακτική Σύνδεση Προτάσεων</h1>
     </header>
+
+    <section id="image-quiz">
+        <h2>Δραστηριότητα: Επιλογή Σωστής Πρότασης</h2>
+        
+        <div class="quiz-container">
+            <div class="question">
+                <button onclick="openImage(1)">Δείτε την εικόνα 1</button>
+                <p>Ποια πρόταση περιγράφει καλύτερα την εικόνα;</p>
+                <button onclick="checkAnswer(this, true)">Όταν κατηφορίζεις την Άγιας Σοφίας, έχεις όλη την πόλη μπροστά σου.</button>
+                <button onclick="checkAnswer(this, false)">Αν κατηφορίσεις την Άγιας Σοφίας, θα δεις την πόλη να κοιμάται.</button>
+            </div>
+            <div class="question">
+                <button onclick="openImage(2)">Δείτε την εικόνα 2</button>
+                <p>Ποια πρόταση περιγράφει καλύτερα την εικόνα;</p>
+                <button onclick="checkAnswer(this, true)">Έμεινε βρεγμένος, επειδή ξέχασε την ομπρέλα του στο σπίτι.</button>
+                <button onclick="checkAnswer(this, false)">Έμεινε βρεγμένος, ώστε να δείξει πως δεν φοβάται τη βροχή.</button>
+            </div>
+            <div class="question">
+                <button onclick="openImage(3)">Δείτε την εικόνα 3</button>
+                <p>Ποια πρόταση περιγράφει καλύτερα την εικόνα;</p>
+                <button onclick="checkAnswer(this, true)">Διάβαζε όλη τη νύχτα, για να προετοιμαστεί για τις εξετάσεις.</button>
+                <button onclick="checkAnswer(this, false)">Διάβαζε όλη τη νύχτα, επειδή βρήκε ένα ενδιαφέρον βιβλίο.</button>
+            </div>
+            <div class="question">
+                <button onclick="openImage(4)">Δείτε την εικόνα 4</button>
+                <p>Ποια πρόταση περιγράφει καλύτερα την εικόνα;</p>
+                <button onclick="checkAnswer(this, true)">Μιλούσε τόσο σιγά, ώστε μόλις μπορούσαν να την ακούσουν.</button>
+                <button onclick="checkAnswer(this, false)">Μιλούσε τόσο σιγά, γιατί δεν ήθελε να την προσέξουν.</button>
+            </div>
+            <div class="question">
+                <button onclick="openImage(5)">Δείτε την εικόνα 5</button>
+                <p>Ποια πρόταση περιγράφει καλύτερα την εικόνα;</p>
+                <button onclick="checkAnswer(this, true)">Αν έχει καλό καιρό, θα κάνουμε πικνίκ στο πάρκο.</button>
+                <button onclick="checkAnswer(this, false)">Έχει καλό καιρό, ωστόσο θα κάνουμε πικνίκ στο πάρκο.</button>
+            </div>
+            <div class="question">
+                <button onclick="openImage(6)">Δείτε την εικόνα 6</button>
+                <p>Ποια πρόταση περιγράφει καλύτερα την εικόνα;</p>
+                <button onclick="checkAnswer(this, true)">Αν και έβρεχε καταρρακτωδώς, τερμάτισε τον μαραθώνιο.</button>
+                <button onclick="checkAnswer(this, false)">Επειδή έβρεχε καταρρακτωδώς, αποφάσισε να τερματίσει τον μαραθώνιο.</button>
+            </div>
+            <div class="question">
+                <button onclick="openImage(7)">Δείτε την εικόνα 7</button>
+                <p>Ποια πρόταση περιγράφει καλύτερα την εικόνα;</p>
+                <button onclick="checkAnswer(this, true)">Μόλις έφτασε το λεωφορείο, η γυναίκα κοίταξε το ρολόι της.</button>
+                <button onclick="checkAnswer(this, false)">Επειδή έφτασε το λεωφορείο, η γυναίκα κοίταξε το ρολόι της.</button>
+            </div>
+            <div class="question">
+                <button onclick="openImage(8)">Δείτε την εικόνα 8</button>
+                <p>Ποια πρόταση περιγράφει καλύτερα την εικόνα;</p>
+                <button onclick="checkAnswer(this, true)">Ο μαθητής απογοητεύτηκε, επειδή πήρε χαμηλό βαθμό στο διαγώνισμα.</button>
+                <button onclick="checkAnswer(this, false)">Ο μαθητής απογοητεύτηκε, ώστε να προσπαθήσει περισσότερο την επόμενη φορά.</button>
+            </div>
+            <div class="question">
+                <button onclick="openImage(9)">Δείτε την εικόνα 9</button>
+                <p>Ποια πρόταση περιγράφει καλύτερα την εικόνα;</p>
+                <button onclick="checkAnswer(this, true)">Ο πυροσβέστης ανέβηκε στη σκάλα, για να σώσει το γατάκι.</button>
+                <button onclick="checkAnswer(this, false)">Ο πυροσβέστης ανέβηκε στη σκάλα, επειδή το γατάκι φαινόταν φοβισμένο.</button>
+            </div>
+            <div class="question">
+                <button onclick="openImage(10)">Δείτε την εικόνα 10</button>
+                <p>Ποια πρόταση περιγράφει καλύτερα την εικόνα;</p>
+                <button onclick="checkAnswer(this, true)">Φώναξε τόσο δυνατά, ώστε όλοι γύρισαν να τον κοιτάξουν.</button>
+                <button onclick="checkAnswer(this, false)">Φώναξε τόσο δυνατά, αν και ήθελε να τραβήξει την προσοχή.</button>
+            </div>
+            <div class="question">
+                <button onclick="openImage(11)">Δείτε την εικόνα 11</button>
+                <p>Ποια πρόταση περιγράφει καλύτερα την εικόνα;</p>
+                <button onclick="checkAnswer(this, true)">Αν βρέξει, θα ανοίξει την ομπρέλα του.</button>
+                <button onclick="checkAnswer(this, false)">Επειδή βρέχει, θα ανοίξει την ομπρέλα του.</button>
+            </div>
+            <div class="question">
+                <button onclick="openImage(12)">Δείτε την εικόνα 12</button>
+                <p>Ποια πρόταση περιγράφει καλύτερα την εικόνα;</p>
+                <button onclick="checkAnswer(this, true)">Αν και το μονοπάτι ήταν απότομο, συνέχισε να ανεβαίνει.</button>
+                <button onclick="checkAnswer(this, false)">Επειδή το μονοπάτι ήταν απότομο, συνέχισε να ανεβαίνει.</button>
+            </div>
+            <div class="question">
+                <button onclick="openImage(13)">Δείτε την εικόνα 13</button>
+                <p>Ποια πρόταση περιγράφει καλύτερα την εικόνα;</p>
+                <button onclick="checkAnswer(this, true)">Μαγειρεύουν μαζί, για να απολαύσουν ένα σπιτικό γεύμα.</button>
+                <button onclick="checkAnswer(this, false)">Μαγειρεύουν μαζί, ώστε δεν είχαν τίποτα άλλο να κάνουν.</button>
+            </div>
+            <div class="question">
+                <button onclick="openImage(14)">Δείτε την εικόνα 14</button>
+                <p>Ποια πρόταση περιγράφει καλύτερα την εικόνα;</p>
+                <button onclick="checkAnswer(this, true)">Όταν φυσάει δυνατός αέρας, ο χαρταετός πετάει πιο ψηλά.</button>
+                <button onclick="checkAnswer(this, false)">Αν φυσήξει δυνατός αέρας, ο χαρταετός θα σπάσει.</button>
+            </div>
+            <div class="question">
+                <button onclick="openImage(15)">Δείτε την εικόνα 15</button>
+                <p>Ποια πρόταση περιγράφει καλύτερα την εικόνα;</p>
+                <button onclick="checkAnswer(this, true)">Αν και η καταιγίδα ήταν δυνατή, ο ποδηλάτης συνέχισε την πορεία του.</button>
+                <button onclick="checkAnswer(this, false)">Επειδή η καταιγίδα ήταν δυνατή, ο ποδηλάτης συνέχισε την πορεία του.</button>
+            </div>
+        </div>
+    </section>
 
     <div class="container">
         <div class="instruction">
@@ -331,16 +486,28 @@
         function checkAnswer2(answer, exerciseNumber, isCorrect) {
             const feedback = document.getElementById(`feedback2-${exerciseNumber}`);
             if (isCorrect) {
-                feedback.innerHTML = `<span class="correct">🎉 Σωστό! Η δευτερεύουσα πρόταση δείχνει "${answer}". 🎉</span>`;
+                feedback.innerHTML = `<span class="correct-feedback">🎉 Σωστό! Η δευτερεύουσα πρόταση δείχνει "${answer}". 🎉</span>`;
                 if (exerciseNumber < 20) {
                     document.getElementById(`exercise2-${exerciseNumber}`).classList.add('hidden');
                     document.getElementById(`exercise2-${exerciseNumber + 1}`).classList.remove('hidden');
                 }
             } else {
-                feedback.innerHTML = `<span class="incorrect">😞 Λάθος. Η δευτερεύουσα πρόταση δεν δείχνει "${answer}". 😞</span>`;
+                feedback.innerHTML = `<span class="incorrect-feedback">😞 Λάθος. Η δευτερεύουσα πρόταση δεν δείχνει "${answer}". 😞</span>`;
             }
         }
-    </script>
 
+        function checkAnswer(button, isCorrect) {
+            if (isCorrect) {
+                button.classList.add("correct");
+            } else {
+                button.classList.add("incorrect");
+            }
+        }
+
+        function openImage(number) {
+            let imgWindow = window.open("", "_blank", "width=600,height=400");
+            imgWindow.document.write(`<img src="images/${number}.jpg" style="width:100%;">`);
+        }
+    </script>
 </body>
 </html>

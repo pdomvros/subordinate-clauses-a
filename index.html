@@ -32,27 +32,17 @@
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        .example {
-            background-color: #f4f4f4;
-            padding: 10px;
-            border-left: 5px solid #3498db;
-            margin: 20px 0;
-            cursor: pointer;
-        }
         .exercise {
             background-color: #ecf0f1;
             padding: 10px;
             border-left: 5px solid #e67e22;
             margin: 20px 0;
         }
-        .highlight {
-            color: #e74c3c;
-            font-weight: bold;
-        }
         .interactive {
             cursor: pointer;
             color: #3498db;
             text-decoration: underline;
+            margin-right: 10px;
         }
         .interactive:hover {
             color: #2980b9;
@@ -70,6 +60,16 @@
         .hidden {
             display: none;
         }
+        .clause {
+            background-color: #f9f9f9;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        .options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
     </style>
 </head>
 <body>
@@ -81,123 +81,265 @@
     <div class="container">
         <h1>Υποτακτικές Προτάσεις - Α' Γυμνασίου</h1>
 
-        <h2>1. Θεωρία</h2>
-        <p>Οι υποτακτικές προτάσεις είναι προτάσεις που εξαρτώνται από μια κύρια πρόταση και συμπληρώνουν το νόημά της. Μπορούν να λειτουργούν ως:</p>
-        <ul>
-            <li><span class="highlight">Αντικείμενο ή υποκείμενο</span> του ρήματος της κύριας πρότασης.</li>
-            <li><span class="highlight">Επιρρηματικοί προσδιορισμοί</span> (χρόνος, αιτία, σκοπός, αποτέλεσμα, υπόθεση, εναντίωση).</li>
-        </ul>
-
-        <h3>Συνδέσμοι υποτακτικών προτάσεων:</h3>
-        <ul>
-            <li><span class="highlight">ότι, πως, να, μήπως, γιατί, επειδή, όταν, αφού, ώστε, αν, αν και</span> κ.ά.</li>
-        </ul>
-
-        <h2>2. Παραδείγματα</h2>
-
-        <div class="example" onclick="showNextExample(1)">
-            <h3>Παράδειγμα 1: Χρονική πρόταση</h3>
-            <p><strong>Κύρια πρόταση:</strong> Ο κόσμος της αγοράς απλώνεται μπροστά μας.</p>
-            <p><strong>Υποτακτική πρόταση:</strong> <span class="highlight">Όταν</span> κατηφορίζουμε την οδό Ερμού.</p>
-            <p><strong>Πλήρης πρόταση:</strong> Ο κόσμος της αγοράς απλώνεται μπροστά μας, <span class="highlight">όταν</span> κατηφορίζουμε την οδό Ερμού.</p>
-        </div>
-
-        <div class="example hidden" onclick="showNextExample(2)">
-            <h3>Παράδειγμα 2: Αιτιολογική πρόταση</h3>
-            <p><strong>Κύρια πρόταση:</strong> Αυτό ήταν απαραίτητο.</p>
-            <p><strong>Υποτακτική πρόταση:</strong> <span class="highlight">Επειδή</span> η περιοχή ήταν πολύ εκτεθειμένη σε πειρατικές επιδρομές.</p>
-            <p><strong>Πλήρης πρόταση:</strong> Αυτό ήταν απαραίτητο, <span class="highlight">επειδή</span> η περιοχή ήταν πολύ εκτεθειμένη σε πειρατικές επιδρομές.</p>
-        </div>
-
-        <div class="example hidden" onclick="showNextExample(3)">
-            <h3>Παράδειγμα 3: Σκοπιμότητας</h3>
-            <p><strong>Κύρια πρόταση:</strong> Τα καράβια έρχονταν.</p>
-            <p><strong>Υποτακτική πρόταση:</strong> <span class="highlight">Για να</span> φορτώσουν ξυλεία.</p>
-            <p><strong>Πλήρης πρόταση:</strong> Τα καράβια έρχονταν <span class="highlight">για να</span> φορτώσουν ξυλεία.</p>
-        </div>
-
-        <h2>3. Ασκήσεις</h2>
-
         <div class="exercise">
-            <h3>Άσκηση 1: Εντοπισμός υποτακτικών προτάσεων</h3>
-            <p>Διαβάστε το παρακάτω απόσπασμα και κάντε κλικ στις υποτακτικές προτάσεις:</p>
-            <div id="exercise1">
-                <p><em>"Όταν άσπριζε η κάμαρα κι έφεγγαν οι τοίχοι, τα ιστιοφόρα είχαν πια καβατζάρει τους πελώριους βράχους στην άκρη του κόλπου κι έρχονταν να φορτώσουν ξυλεία."</em></p>
-                <p><span class="interactive" onclick="checkAnswer('Όταν άσπριζε η κάμαρα κι έφεγγαν οι τοίχοι', 1)">Όταν άσπριζε η κάμαρα κι έφεγγαν οι τοίχοι</span></p>
-                <p><span class="interactive" onclick="checkAnswer('κι έρχονταν να φορτώσουν ξυλεία', 1)">κι έρχονταν να φορτώσουν ξυλεία</span></p>
-                <div id="feedback1" class="feedback"></div>
+            <h3>Εξάσκηση: Τύπος δευτερεύουσας πρότασης</h3>
+            <p>Διαβάστε την πρόταση και επιλέξτε τι δείχνει η δευτερεύουσα πρόταση:</p>
+            <div id="exercise2-1">
+                <p><em>"Όταν βραδιάζει, τα φώτα της πόλης δημιουργούν μια μαγευτική ατμόσφαιρα."</em></p>
+                <div class="options">
+                    <span class="interactive" onclick="checkAnswer2('χρόνο', 1, true)">Χρόνο</span>
+                    <span class="interactive" onclick="checkAnswer2('αιτία', 1, false)">Αιτία</span>
+                    <span class="interactive" onclick="checkAnswer2('σκοπό', 1, false)">Σκοπό</span>
+                    <span class="interactive" onclick="checkAnswer2('αποτέλεσμα', 1, false)">Αποτέλεσμα</span>
+                    <span class="interactive" onclick="checkAnswer2('υπόθεση', 1, false)">Υπόθεση</span>
+                    <span class="interactive" onclick="checkAnswer2('εναντίωση', 1, false)">Εναντίωση</span>
+                </div>
+                <div id="feedback2-1" class="feedback"></div>
             </div>
-            <div id="exercise2" class="hidden">
-                <p><em>"Αν και περνάει δύσκολα, δεν αφήνει τον τόπο του."</em></p>
-                <p><span class="interactive" onclick="checkAnswer('Αν και περνάει δύσκολα', 2)">Αν και περνάει δύσκολα</span></p>
-                <div id="feedback2" class="feedback"></div>
+            <div id="exercise2-2" class="hidden">
+                <p><em>"Έμεινε στο σπίτι, επειδή δεν αισθανόταν καλά."</em></p>
+                <div class="options">
+                    <span class="interactive" onclick="checkAnswer2('αιτία', 2, true)">Αιτία</span>
+                    <span class="interactive" onclick="checkAnswer2('χρόνο', 2, false)">Χρόνο</span>
+                    <span class="interactive" onclick="checkAnswer2('σκοπό', 2, false)">Σκοπό</span>
+                    <span class="interactive" onclick="checkAnswer2('αποτέλεσμα', 2, false)">Αποτέλεσμα</span>
+                    <span class="interactive" onclick="checkAnswer2('υπόθεση', 2, false)">Υπόθεση</span>
+                    <span class="interactive" onclick="checkAnswer2('εναντίωση', 2, false)">Εναντίωση</span>
+                </div>
+                <div id="feedback2-2" class="feedback"></div>
             </div>
-            <div id="exercise3" class="hidden">
-                <p><em>"Επειδή οι Κορίνθιοι έχτισαν την πόλη τους πάνω στον Ισθμό, έγινε από πολύ παλιά εμπορικό κέντρο."</em></p>
-                <p><span class="interactive" onclick="checkAnswer('Επειδή οι Κορίνθιοι έχτισαν την πόλη τους πάνω στον Ισθμό', 3)">Επειδή οι Κορίνθιοι έχτισαν την πόλη τους πάνω στον Ισθμό</span></p>
-                <div id="feedback3" class="feedback"></div>
+            <div id="exercise2-3" class="hidden">
+                <p><em>"Διάβαζε ώρες ατελείωτες, για να περάσει τις εξετάσεις."</em></p>
+                <div class="options">
+                    <span class="interactive" onclick="checkAnswer2('σκοπό', 3, true)">Σκοπό</span>
+                    <span class="interactive" onclick="checkAnswer2('χρόνο', 3, false)">Χρόνο</span>
+                    <span class="interactive" onclick="checkAnswer2('αιτία', 3, false)">Αιτία</span>
+                    <span class="interactive" onclick="checkAnswer2('αποτέλεσμα', 3, false)">Αποτέλεσμα</span>
+                    <span class="interactive" onclick="checkAnswer2('υπόθεση', 3, false)">Υπόθεση</span>
+                    <span class="interactive" onclick="checkAnswer2('εναντίωση', 3, false)">Εναντίωση</span>
+                </div>
+                <div id="feedback2-3" class="feedback"></div>
             </div>
-            <!-- Προσθέστε περισσότερες προτάσεις εδώ -->
+            <div id="exercise2-4" class="hidden">
+                <p><em>"Τρέχει πολύ γρήγορα, ώστε κανείς να μην τον φτάνει."</em></p>
+                <div class="options">
+                    <span class="interactive" onclick="checkAnswer2('αποτέλεσμα', 4, true)">Αποτέλεσμα</span>
+                    <span class="interactive" onclick="checkAnswer2('χρόνο', 4, false)">Χρόνο</span>
+                    <span class="interactive" onclick="checkAnswer2('αιτία', 4, false)">Αιτία</span>
+                    <span class="interactive" onclick="checkAnswer2('σκοπό', 4, false)">Σκοπό</span>
+                    <span class="interactive" onclick="checkAnswer2('υπόθεση', 4, false)">Υπόθεση</span>
+                    <span class="interactive" onclick="checkAnswer2('εναντίωση', 4, false)">Εναντίωση</span>
+                </div>
+                <div id="feedback2-4" class="feedback"></div>
+            </div>
+            <div id="exercise2-5" class="hidden">
+                <p><em>"Αν βρέξει αύριο, η εκδρομή θα ακυρωθεί."</em></p>
+                <div class="options">
+                    <span class="interactive" onclick="checkAnswer2('υπόθεση', 5, true)">Υπόθεση</span>
+                    <span class="interactive" onclick="checkAnswer2('χρόνο', 5, false)">Χρόνο</span>
+                    <span class="interactive" onclick="checkAnswer2('αιτία', 5, false)">Αιτία</span>
+                    <span class="interactive" onclick="checkAnswer2('σκοπό', 5, false)">Σκοπό</span>
+                    <span class="interactive" onclick="checkAnswer2('αποτέλεσμα', 5, false)">Αποτέλεσμα</span>
+                    <span class="interactive" onclick="checkAnswer2('εναντίωση', 5, false)">Εναντίωση</span>
+                </div>
+                <div id="feedback2-5" class="feedback"></div>
+            </div>
+            <div id="exercise2-6" class="hidden">
+                <p><em>"Αν και έκανε κρύο, βγήκαμε για βόλτα."</em></p>
+                <div class="options">
+                    <span class="interactive" onclick="checkAnswer2('εναντίωση', 6, true)">Εναντίωση</span>
+                    <span class="interactive" onclick="checkAnswer2('χρόνο', 6, false)">Χρόνο</span>
+                    <span class="interactive" onclick="checkAnswer2('αιτία', 6, false)">Αιτία</span>
+                    <span class="interactive" onclick="checkAnswer2('σκοπό', 6, false)">Σκοπό</span>
+                    <span class="interactive" onclick="checkAnswer2('αποτέλεσμα', 6, false)">Αποτέλεσμα</span>
+                    <span class="interactive" onclick="checkAnswer2('υπόθεση', 6, false)">Υπόθεση</span>
+                </div>
+                <div id="feedback2-6" class="feedback"></div>
+            </div>
+            <div id="exercise2-7" class="hidden">
+                <p><em>"Μόλις άκουσε το όνομά του, σηκώθηκε να απαντήσει."</em></p>
+                <div class="options">
+                    <span class="interactive" onclick="checkAnswer2('χρόνο', 7, true)">Χρόνο</span>
+                    <span class="interactive" onclick="checkAnswer2('αιτία', 7, false)">Αιτία</span>
+                    <span class="interactive" onclick="checkAnswer2('σκοπό', 7, false)">Σκοπό</span>
+                    <span class="interactive" onclick="checkAnswer2('αποτέλεσμα', 7, false)">Αποτέλεσμα</span>
+                    <span class="interactive" onclick="checkAnswer2('υπόθεση', 7, false)">Υπόθεση</span>
+                    <span class="interactive" onclick="checkAnswer2('εναντίωση', 7, false)">Εναντίωση</span>
+                </div>
+                <div id="feedback2-7" class="feedback"></div>
+            </div>
+            <div id="exercise2-8" class="hidden">
+                <p><em>"Αποφάσισαν να φύγουν νωρίς, διότι ο καιρός φαινόταν άσχημος."</em></p>
+                <div class="options">
+                    <span class="interactive" onclick="checkAnswer2('αιτία', 8, true)">Αιτία</span>
+                    <span class="interactive" onclick="checkAnswer2('χρόνο', 8, false)">Χρόνο</span>
+                    <span class="interactive" onclick="checkAnswer2('σκοπό', 8, false)">Σκοπό</span>
+                    <span class="interactive" onclick="checkAnswer2('αποτέλεσμα', 8, false)">Αποτέλεσμα</span>
+                    <span class="interactive" onclick="checkAnswer2('υπόθεση', 8, false)">Υπόθεση</span>
+                    <span class="interactive" onclick="checkAnswer2('εναντίωση', 8, false)">Εναντίωση</span>
+                </div>
+                <div id="feedback2-8" class="feedback"></div>
+            </div>
+            <div id="exercise2-9" class="hidden">
+                <p><em>"Περπάτησε σιγά, ώστε να μην ξυπνήσει το μωρό."</em></p>
+                <div class="options">
+                    <span class="interactive" onclick="checkAnswer2('σκοπό', 9, true)">Σκοπό</span>
+                    <span class="interactive" onclick="checkAnswer2('χρόνο', 9, false)">Χρόνο</span>
+                    <span class="interactive" onclick="checkAnswer2('αιτία', 9, false)">Αιτία</span>
+                    <span class="interactive" onclick="checkAnswer2('αποτέλεσμα', 9, false)">Αποτέλεσμα</span>
+                    <span class="interactive" onclick="checkAnswer2('υπόθεση', 9, false)">Υπόθεση</span>
+                    <span class="interactive" onclick="checkAnswer2('εναντίωση', 9, false)">Εναντίωση</span>
+                </div>
+                <div id="feedback2-9" class="feedback"></div>
+            </div>
+            <div id="exercise2-10" class="hidden">
+                <p><em>"Φώναξε τόσο δυνατά, που τον άκουσαν από το διπλανό δωμάτιο."</em></p>
+                <div class="options">
+                    <span class="interactive" onclick="checkAnswer2('αποτέλεσμα', 10, true)">Αποτέλεσμα</span>
+                    <span class="interactive" onclick="checkAnswer2('χρόνο', 10, false)">Χρόνο</span>
+                    <span class="interactive" onclick="checkAnswer2('αιτία', 10, false)">Αιτία</span>
+                    <span class="interactive" onclick="checkAnswer2('σκοπό', 10, false)">Σκοπό</span>
+                    <span class="interactive" onclick="checkAnswer2('υπόθεση', 10, false)">Υπόθεση</span>
+                    <span class="interactive" onclick="checkAnswer2('εναντίωση', 10, false)">Εναντίωση</span>
+                </div>
+                <div id="feedback2-10" class="feedback"></div>
+            </div>
+            <div id="exercise2-11" class="hidden">
+                <p><em>"Αν προσπαθήσεις περισσότερο, θα τα καταφέρεις."</em></p>
+                <div class="options">
+                    <span class="interactive" onclick="checkAnswer2('υπόθεση', 11, true)">Υπόθεση</span>
+                    <span class="interactive" onclick="checkAnswer2('χρόνο', 11, false)">Χρόνο</span>
+                    <span class="interactive" onclick="checkAnswer2('αιτία', 11, false)">Αιτία</span>
+                    <span class="interactive" onclick="checkAnswer2('σκοπό', 11, false)">Σκοπό</span>
+                    <span class="interactive" onclick="checkAnswer2('αποτέλεσμα', 11, false)">Αποτέλεσμα</span>
+                    <span class="interactive" onclick="checkAnswer2('εναντίωση', 11, false)">Εναντίωση</span>
+                </div>
+                <div id="feedback2-11" class="feedback"></div>
+            </div>
+            <div id="exercise2-12" class="hidden">
+                <p><em>"Παρόλο που προσπάθησε πολύ, δεν κατάφερε να κερδίσει."</em></p>
+                <div class="options">
+                    <span class="interactive" onclick="checkAnswer2('εναντίωση', 12, true)">Εναντίωση</span>
+                    <span class="interactive" onclick="checkAnswer2('χρόνο', 12, false)">Χρόνο</span>
+                    <span class="interactive" onclick="checkAnswer2('αιτία', 12, false)">Αιτία</span>
+                    <span class="interactive" onclick="checkAnswer2('σκοπό', 12, false)">Σκοπό</span>
+                    <span class="interactive" onclick="checkAnswer2('αποτέλεσμα', 12, false)">Αποτέλεσμα</span>
+                    <span class="interactive" onclick="checkAnswer2('υπόθεση', 12, false)">Υπόθεση</span>
+                </div>
+                <div id="feedback2-12" class="feedback"></div>
+            </div>
+            <div id="exercise2-13" class="hidden">
+                <p><em>"Αφού τελείωσε το γεύμα του, έφυγε βιαστικά."</em></p>
+                <div class="options">
+                    <span class="interactive" onclick="checkAnswer2('χρόνο', 13, true)">Χρόνο</span>
+                    <span class="interactive" onclick="checkAnswer2('αιτία', 13, false)">Αιτία</span>
+                    <span class="interactive" onclick="checkAnswer2('σκοπό', 13, false)">Σκοπό</span>
+                    <span class="interactive" onclick="checkAnswer2('αποτέλεσμα', 13, false)">Αποτέλεσμα</span>
+                    <span class="interactive" onclick="checkAnswer2('υπόθεση', 13, false)">Υπόθεση</span>
+                    <span class="interactive" onclick="checkAnswer2('εναντίωση', 13, false)">Εναντίωση</span>
+                </div>
+                <div id="feedback2-13" class="feedback"></div>
+            </div>
+            <div id="exercise2-14" class="hidden">
+                <p><em>"Η γη ήταν εύφορη, γιατί το ποτάμι την πότιζε συνεχώς."</em></p>
+                <div class="options">
+                    <span class="interactive" onclick="checkAnswer2('αιτία', 14, true)">Αιτία</span>
+                    <span class="interactive" onclick="checkAnswer2('χρόνο', 14, false)">Χρόνο</span>
+                    <span class="interactive" onclick="checkAnswer2('σκοπό', 14, false)">Σκοπό</span>
+                    <span class="interactive" onclick="checkAnswer2('αποτέλεσμα', 14, false)">Αποτέλεσμα</span>
+                    <span class="interactive" onclick="checkAnswer2('υπόθεση', 14, false)">Υπόθεση</span>
+                    <span class="interactive" onclick="checkAnswer2('εναντίωση', 14, false)">Εναντίωση</span>
+                </div>
+                <div id="feedback2-14" class="feedback"></div>
+            </div>
+            <div id="exercise2-15" class="hidden">
+                <p><em>"Έβαλε το παλτό του, για να μην κρυώσει."</em></p>
+                <div class="options">
+                    <span class="interactive" onclick="checkAnswer2('σκοπό', 15, true)">Σκοπό</span>
+                    <span class="interactive" onclick="checkAnswer2('χρόνο', 15, false)">Χρόνο</span>
+                    <span class="interactive" onclick="checkAnswer2('αιτία', 15, false)">Αιτία</span>
+                    <span class="interactive" onclick="checkAnswer2('αποτέλεσμα', 15, false)">Αποτέλεσμα</span>
+                    <span class="interactive" onclick="checkAnswer2('υπόθεση', 15, false)">Υπόθεση</span>
+                    <span class="interactive" onclick="checkAnswer2('εναντίωση', 15, false)">Εναντίωση</span>
+                </div>
+                <div id="feedback2-15" class="feedback"></div>
+            </div>
+            <div id="exercise2-16" class="hidden">
+                <p><em>"Έκανε τόσο κρύο, ώστε πάγωσαν οι λίμνες."</em></p>
+                <div class="options">
+                    <span class="interactive" onclick="checkAnswer2('αποτέλεσμα', 16, true)">Αποτέλεσμα</span>
+                    <span class="interactive" onclick="checkAnswer2('χρόνο', 16, false)">Χρόνο</span>
+                    <span class="interactive" onclick="checkAnswer2('αιτία', 16, false)">Αιτία</span>
+                    <span class="interactive" onclick="checkAnswer2('σκοπό', 16, false)">Σκοπό</span>
+                    <span class="interactive" onclick="checkAnswer2('υπόθεση', 16, false)">Υπόθεση</span>
+                    <span class="interactive" onclick="checkAnswer2('εναντίωση', 16, false)">Εναντίωση</span>
+                </div>
+                <div id="feedback2-16" class="feedback"></div>
+            </div>
+            <div id="exercise2-17" class="hidden">
+                <p><em>"Εάν με χρειαστείς, θα είμαι στο γραφείο."</em></p>
+                <div class="options">
+                    <span class="interactive" onclick="checkAnswer2('υπόθεση', 17, true)">Υπόθεση</span>
+                    <span class="interactive" onclick="checkAnswer2('χρόνο', 17, false)">Χρόνο</span>
+                    <span class="interactive" onclick="checkAnswer2('αιτία', 17, false)">Αιτία</span>
+                    <span class="interactive" onclick="checkAnswer2('σκοπό', 17, false)">Σκοπό</span>
+                    <span class="interactive" onclick="checkAnswer2('αποτέλεσμα', 17, false)">Αποτέλεσμα</span>
+                    <span class="interactive" onclick="checkAnswer2('εναντίωση', 17, false)">Εναντίωση</span>
+                </div>
+                <div id="feedback2-17" class="feedback"></div>
+            </div>
+            <div id="exercise2-18" class="hidden">
+                <p><em>"Ενώ είχε χρόνο, δεν διάβασε καθόλου."</em></p>
+                <div class="options">
+                    <span class="interactive" onclick="checkAnswer2('εναντίωση', 18, true)">Εναντίωση</span>
+                    <span class="interactive" onclick="checkAnswer2('χρόνο', 18, false)">Χρόνο</span>
+                    <span class="interactive" onclick="checkAnswer2('αιτία', 18, false)">Αιτία</span>
+                    <span class="interactive" onclick="checkAnswer2('σκοπό', 18, false)">Σκοπό</span>
+                    <span class="interactive" onclick="checkAnswer2('αποτέλεσμα', 18, false)">Αποτέλεσμα</span>
+                    <span class="interactive" onclick="checkAnswer2('υπόθεση', 18, false)">Υπόθεση</span>
+                </div>
+                <div id="feedback2-18" class="feedback"></div>
+            </div>
+            <div id="exercise2-19" class="hidden">
+                <p><em>"Παρά το γεγονός ότι ένιωθε κουρασμένος, συνέχισε να εργάζεται."</em></p>
+                <div class="options">
+                    <span class="interactive" onclick="checkAnswer2('εναντίωση', 19, true)">Εναντίωση</span>
+                    <span class="interactive" onclick="checkAnswer2('χρόνο', 19, false)">Χρόνο</span>
+                    <span class="interactive" onclick="checkAnswer2('αιτία', 19, false)">Αιτία</span>
+                    <span class="interactive" onclick="checkAnswer2('σκοπό', 19, false)">Σκοπό</span>
+                    <span class="interactive" onclick="checkAnswer2('αποτέλεσμα', 19, false)">Αποτέλεσμα</span>
+                    <span class="interactive" onclick="checkAnswer2('υπόθεση', 19, false)">Υπόθεση</span>
+                </div>
+                <div id="feedback2-19" class="feedback"></div>
+            </div>
+            <div id="exercise2-20" class="hidden">
+                <p><em>"Αν και φοβόταν, ανέβηκε στη σκηνή και μίλησε."</em></p>
+                <div class="options">
+                    <span class="interactive" onclick="checkAnswer2('εναντίωση', 20, true)">Εναντίωση</span>
+                    <span class="interactive" onclick="checkAnswer2('χρόνο', 20, false)">Χρόνο</span>
+                    <span class="interactive" onclick="checkAnswer2('αιτία', 20, false)">Αιτία</span>
+                    <span class="interactive" onclick="checkAnswer2('σκοπό', 20, false)">Σκοπό</span>
+                    <span class="interactive" onclick="checkAnswer2('αποτέλεσμα', 20, false)">Αποτέλεσμα</span>
+                    <span class="interactive" onclick="checkAnswer2('υπόθεση', 20, false)">Υπόθεση</span>
+                </div>
+                <div id="feedback2-20" class="feedback"></div>
+            </div>
         </div>
-
-        <div class="exercise">
-            <h3>Άσκηση 2: Σύνδεση προτάσεων</h3>
-            <p>Συνδέστε τις παρακάτω προτάσεις χρησιμοποιώντας τους κατάλληλους συνδέσμους:</p>
-            <ul>
-                <li>Ο Γιάννης αποφάσισε να φύγει. Θύμωσε.</li>
-                <li>Θα πάτε στη Μυτιλήνη. Θα περάσετε ωραία.</li>
-            </ul>
-            <p><strong>Απάντηση:</strong></p>
-            <ul>
-                <li>Θύμωσε, <span class="highlight">επειδή</span> ο Γιάννης αποφάσισε να φύγει.</li>
-                <li><span class="highlight">Αν</span> πάτε στη Μυτιλήνη, θα περάσετε ωραία.</li>
-            </ul>
-        </div>
-
-        <div class="exercise">
-            <h3>Άσκηση 3: Στίξη</h3>
-            <p>Σε ποιες από τις παρακάτω προτάσεις χρειάζεται κόμμα;</p>
-            <ul>
-                <li>Λέγεται ότι οι πρώτοι Κορίνθιοι χρησιμοποίησαν το σημερινό τρόπο κατασκευής των καραβιών.</li>
-                <li>Ο κόσμος της αγοράς απλώνεται μπροστά μας καθώς κατηφορίζουμε την οδό Ερμού.</li>
-            </ul>
-            <p><strong>Απάντηση:</strong></p>
-            <ul>
-                <li>Δεν χρειάζεται κόμμα.</li>
-                <li>Χρειάζεται κόμμα: Ο κόσμος της αγοράς απλώνεται μπροστά μας, <span class="highlight">καθώς</span> κατηφορίζουμε την οδό Ερμού.</li>
-            </ul>
-        </div>
-
-        <h2>4. Επιπλέον Υλικό</h2>
-        <p>Για περισσότερες πληροφορίες και ασκήσεις, μπορείτε να ανατρέξετε στα κείμενα από το αρχείο "Υποτακτική Σύνδεση προτάσεων - Εισαγωγικά κείμενα.docx".</p>
     </div>
 
     <script>
-        let currentExample = 1;
         let currentExercise = 1;
 
-        function showNextExample(exampleNumber) {
-            document.querySelectorAll('.example').forEach(example => {
-                example.classList.add('hidden');
-            });
-            document.querySelector(`.example:nth-child(${exampleNumber + 3})`).classList.remove('hidden');
-        }
-
-        function checkAnswer(answer, exerciseNumber) {
-            const correctAnswers = [
-                "Όταν άσπριζε η κάμαρα κι έφεγγαν οι τοίχοι",
-                "Αν και περνάει δύσκολα",
-                "Επειδή οι Κορίνθιοι έχτισαν την πόλη τους πάνω στον Ισθμό"
-            ];
-            const feedback = document.getElementById(`feedback${exerciseNumber}`);
-            if (answer === correctAnswers[exerciseNumber - 1]) {
-                feedback.innerHTML = `<span class="correct">Σωστό! Η πρόταση "${answer}" είναι υποτακτική.</span>`;
-                if (exerciseNumber < 3) {
-                    document.getElementById(`exercise${exerciseNumber}`).classList.add('hidden');
-                    document.getElementById(`exercise${exerciseNumber + 1}`).classList.remove('hidden');
+        function checkAnswer2(answer, exerciseNumber, isCorrect) {
+            const feedback = document.getElementById(`feedback2-${exerciseNumber}`);
+            if (isCorrect) {
+                feedback.innerHTML = `<span class="correct">🎉 Σωστό! Η δευτερεύουσα πρόταση δείχνει "${answer}". 🎉</span>`;
+                if (exerciseNumber < 20) {
+                    document.getElementById(`exercise2-${exerciseNumber}`).classList.add('hidden');
+                    document.getElementById(`exercise2-${exerciseNumber + 1}`).classList.remove('hidden');
                 }
             } else {
-                feedback.innerHTML = `<span class="incorrect">Λάθος. Η πρόταση "${answer}" δεν είναι υποτακτική.</span>`;
+                feedback.innerHTML = `<span class="incorrect">😞 Λάθος. Η δευτερεύουσα πρόταση δεν δείχνει "${answer}". 😞</span>`;
             }
         }
     </script>

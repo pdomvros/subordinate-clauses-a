@@ -3,67 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Υποτακτικές Προτάσεις - Α' Γυμνασίου</title>
+    <title>Υποτακτική Σύνδεση (Α' Γυμνασίου)</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
             line-height: 1.6;
             margin: 0;
             padding: 0;
-            background-image: url('background.png');
-            background-size: cover;
-            background-attachment: fixed;
-            color: #2c3e50;
+            background-color: #000000; /* Μαύρο φόντο */
+            color: #ffffff; /* Λευκό χρώμα για το κύριο κείμενο */
         }
         header {
-            background-color: transparent; /* Χωρίς μάσκα */
-            color: #2c3e50;
+            background-color: transparent;
+            color: #FFD700; /* Χρυσό χρώμα */
             padding: 10px;
             text-align: center;
         }
-        h1, h2, h3 {
-            color: #2c3e50;
+        h1 {
+            color: #FFD700; /* Χρυσό χρώμα */
+            font-weight: bold;
         }
         .container {
             max-width: 800px;
             margin: 20px auto;
             padding: 20px;
-            background-color: rgba(255, 255, 255, 0.9);
+            background-color: #000000; /* Μαύρο φόντο */
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); /* Λευκή σκιά */
         }
         .exercise {
-            background-color: #ecf0f1;
             padding: 10px;
-            border-left: 5px solid #e67e22;
             margin: 20px 0;
+        }
+        .instruction {
+            font-size: 1.2em;
+            color: #00FF00; /* Πράσινο χρώμα */
+            font-weight: bold;
+            margin-bottom: 20px;
         }
         .interactive {
             cursor: pointer;
-            color: #3498db;
+            color: #00BFFF; /* Γαλάζιο χρώμα */
             text-decoration: underline;
             margin-right: 10px;
         }
         .interactive:hover {
-            color: #2980b9;
+            color: #1E90FF; /* Σκούρο γαλάζιο χρώμα */
         }
         .feedback {
             margin-top: 10px;
             font-weight: bold;
         }
         .correct {
-            color: green;
+            color: #00FF00; /* Πράσινο χρώμα */
         }
         .incorrect {
-            color: red;
+            color: #FF0000; /* Κόκκινο χρώμα */
         }
         .hidden {
             display: none;
-        }
-        .clause {
-            background-color: #f9f9f9;
-            padding: 5px;
-            border-radius: 5px;
         }
         .options {
             display: flex;
@@ -75,20 +73,20 @@
 <body>
 
     <header>
-        <h1>Δημιουργία: Παναγιώτης Δόμβρος 2025 (CC BY-NC)</h1>
+        <h1>Υποτακτική Σύνδεση (Α' Γυμνασίου)</h1>
     </header>
 
     <div class="container">
-        <h1>Υποτακτικές Προτάσεις - Α' Γυμνασίου</h1>
+        <div class="instruction">
+            Διαβάστε την πρόταση και επιλέξτε τι δείχνει η δευτερεύουσα πρόταση:
+        </div>
 
         <div class="exercise">
-            <h3>Εξάσκηση: Τύπος δευτερεύουσας πρότασης</h3>
-            <p>Διαβάστε την πρόταση και επιλέξτε τι δείχνει η δευτερεύουσα πρόταση:</p>
             <div id="exercise2-1">
                 <p><em>"Όταν βραδιάζει, τα φώτα της πόλης δημιουργούν μια μαγευτική ατμόσφαιρα."</em></p>
                 <div class="options">
-                    <span class="interactive" onclick="checkAnswer2('χρόνο', 1, true)">Χρόνο</span>
                     <span class="interactive" onclick="checkAnswer2('αιτία', 1, false)">Αιτία</span>
+                    <span class="interactive" onclick="checkAnswer2('χρόνο', 1, true)">Χρόνο</span>
                     <span class="interactive" onclick="checkAnswer2('σκοπό', 1, false)">Σκοπό</span>
                     <span class="interactive" onclick="checkAnswer2('αποτέλεσμα', 1, false)">Αποτέλεσμα</span>
                     <span class="interactive" onclick="checkAnswer2('υπόθεση', 1, false)">Υπόθεση</span>
@@ -99,8 +97,8 @@
             <div id="exercise2-2" class="hidden">
                 <p><em>"Έμεινε στο σπίτι, επειδή δεν αισθανόταν καλά."</em></p>
                 <div class="options">
-                    <span class="interactive" onclick="checkAnswer2('αιτία', 2, true)">Αιτία</span>
                     <span class="interactive" onclick="checkAnswer2('χρόνο', 2, false)">Χρόνο</span>
+                    <span class="interactive" onclick="checkAnswer2('αιτία', 2, true)">Αιτία</span>
                     <span class="interactive" onclick="checkAnswer2('σκοπό', 2, false)">Σκοπό</span>
                     <span class="interactive" onclick="checkAnswer2('αποτέλεσμα', 2, false)">Αποτέλεσμα</span>
                     <span class="interactive" onclick="checkAnswer2('υπόθεση', 2, false)">Υπόθεση</span>
@@ -111,9 +109,9 @@
             <div id="exercise2-3" class="hidden">
                 <p><em>"Διάβαζε ώρες ατελείωτες, για να περάσει τις εξετάσεις."</em></p>
                 <div class="options">
-                    <span class="interactive" onclick="checkAnswer2('σκοπό', 3, true)">Σκοπό</span>
                     <span class="interactive" onclick="checkAnswer2('χρόνο', 3, false)">Χρόνο</span>
                     <span class="interactive" onclick="checkAnswer2('αιτία', 3, false)">Αιτία</span>
+                    <span class="interactive" onclick="checkAnswer2('σκοπό', 3, true)">Σκοπό</span>
                     <span class="interactive" onclick="checkAnswer2('αποτέλεσμα', 3, false)">Αποτέλεσμα</span>
                     <span class="interactive" onclick="checkAnswer2('υπόθεση', 3, false)">Υπόθεση</span>
                     <span class="interactive" onclick="checkAnswer2('εναντίωση', 3, false)">Εναντίωση</span>
@@ -123,10 +121,10 @@
             <div id="exercise2-4" class="hidden">
                 <p><em>"Τρέχει πολύ γρήγορα, ώστε κανείς να μην τον φτάνει."</em></p>
                 <div class="options">
-                    <span class="interactive" onclick="checkAnswer2('αποτέλεσμα', 4, true)">Αποτέλεσμα</span>
                     <span class="interactive" onclick="checkAnswer2('χρόνο', 4, false)">Χρόνο</span>
                     <span class="interactive" onclick="checkAnswer2('αιτία', 4, false)">Αιτία</span>
                     <span class="interactive" onclick="checkAnswer2('σκοπό', 4, false)">Σκοπό</span>
+                    <span class="interactive" onclick="checkAnswer2('αποτέλεσμα', 4, true)">Αποτέλεσμα</span>
                     <span class="interactive" onclick="checkAnswer2('υπόθεση', 4, false)">Υπόθεση</span>
                     <span class="interactive" onclick="checkAnswer2('εναντίωση', 4, false)">Εναντίωση</span>
                 </div>
@@ -135,11 +133,11 @@
             <div id="exercise2-5" class="hidden">
                 <p><em>"Αν βρέξει αύριο, η εκδρομή θα ακυρωθεί."</em></p>
                 <div class="options">
-                    <span class="interactive" onclick="checkAnswer2('υπόθεση', 5, true)">Υπόθεση</span>
                     <span class="interactive" onclick="checkAnswer2('χρόνο', 5, false)">Χρόνο</span>
                     <span class="interactive" onclick="checkAnswer2('αιτία', 5, false)">Αιτία</span>
                     <span class="interactive" onclick="checkAnswer2('σκοπό', 5, false)">Σκοπό</span>
                     <span class="interactive" onclick="checkAnswer2('αποτέλεσμα', 5, false)">Αποτέλεσμα</span>
+                    <span class="interactive" onclick="checkAnswer2('υπόθεση', 5, true)">Υπόθεση</span>
                     <span class="interactive" onclick="checkAnswer2('εναντίωση', 5, false)">Εναντίωση</span>
                 </div>
                 <div id="feedback2-5" class="feedback"></div>
@@ -147,20 +145,20 @@
             <div id="exercise2-6" class="hidden">
                 <p><em>"Αν και έκανε κρύο, βγήκαμε για βόλτα."</em></p>
                 <div class="options">
-                    <span class="interactive" onclick="checkAnswer2('εναντίωση', 6, true)">Εναντίωση</span>
                     <span class="interactive" onclick="checkAnswer2('χρόνο', 6, false)">Χρόνο</span>
                     <span class="interactive" onclick="checkAnswer2('αιτία', 6, false)">Αιτία</span>
                     <span class="interactive" onclick="checkAnswer2('σκοπό', 6, false)">Σκοπό</span>
                     <span class="interactive" onclick="checkAnswer2('αποτέλεσμα', 6, false)">Αποτέλεσμα</span>
                     <span class="interactive" onclick="checkAnswer2('υπόθεση', 6, false)">Υπόθεση</span>
+                    <span class="interactive" onclick="checkAnswer2('εναντίωση', 6, true)">Εναντίωση</span>
                 </div>
                 <div id="feedback2-6" class="feedback"></div>
             </div>
             <div id="exercise2-7" class="hidden">
                 <p><em>"Μόλις άκουσε το όνομά του, σηκώθηκε να απαντήσει."</em></p>
                 <div class="options">
-                    <span class="interactive" onclick="checkAnswer2('χρόνο', 7, true)">Χρόνο</span>
                     <span class="interactive" onclick="checkAnswer2('αιτία', 7, false)">Αιτία</span>
+                    <span class="interactive" onclick="checkAnswer2('χρόνο', 7, true)">Χρόνο</span>
                     <span class="interactive" onclick="checkAnswer2('σκοπό', 7, false)">Σκοπό</span>
                     <span class="interactive" onclick="checkAnswer2('αποτέλεσμα', 7, false)">Αποτέλεσμα</span>
                     <span class="interactive" onclick="checkAnswer2('υπόθεση', 7, false)">Υπόθεση</span>
@@ -171,8 +169,8 @@
             <div id="exercise2-8" class="hidden">
                 <p><em>"Αποφάσισαν να φύγουν νωρίς, διότι ο καιρός φαινόταν άσχημος."</em></p>
                 <div class="options">
-                    <span class="interactive" onclick="checkAnswer2('αιτία', 8, true)">Αιτία</span>
                     <span class="interactive" onclick="checkAnswer2('χρόνο', 8, false)">Χρόνο</span>
+                    <span class="interactive" onclick="checkAnswer2('αιτία', 8, true)">Αιτία</span>
                     <span class="interactive" onclick="checkAnswer2('σκοπό', 8, false)">Σκοπό</span>
                     <span class="interactive" onclick="checkAnswer2('αποτέλεσμα', 8, false)">Αποτέλεσμα</span>
                     <span class="interactive" onclick="checkAnswer2('υπόθεση', 8, false)">Υπόθεση</span>
@@ -183,9 +181,9 @@
             <div id="exercise2-9" class="hidden">
                 <p><em>"Περπάτησε σιγά, ώστε να μην ξυπνήσει το μωρό."</em></p>
                 <div class="options">
-                    <span class="interactive" onclick="checkAnswer2('σκοπό', 9, true)">Σκοπό</span>
                     <span class="interactive" onclick="checkAnswer2('χρόνο', 9, false)">Χρόνο</span>
                     <span class="interactive" onclick="checkAnswer2('αιτία', 9, false)">Αιτία</span>
+                    <span class="interactive" onclick="checkAnswer2('σκοπό', 9, true)">Σκοπό</span>
                     <span class="interactive" onclick="checkAnswer2('αποτέλεσμα', 9, false)">Αποτέλεσμα</span>
                     <span class="interactive" onclick="checkAnswer2('υπόθεση', 9, false)">Υπόθεση</span>
                     <span class="interactive" onclick="checkAnswer2('εναντίωση', 9, false)">Εναντίωση</span>
@@ -195,10 +193,10 @@
             <div id="exercise2-10" class="hidden">
                 <p><em>"Φώναξε τόσο δυνατά, που τον άκουσαν από το διπλανό δωμάτιο."</em></p>
                 <div class="options">
-                    <span class="interactive" onclick="checkAnswer2('αποτέλεσμα', 10, true)">Αποτέλεσμα</span>
                     <span class="interactive" onclick="checkAnswer2('χρόνο', 10, false)">Χρόνο</span>
                     <span class="interactive" onclick="checkAnswer2('αιτία', 10, false)">Αιτία</span>
                     <span class="interactive" onclick="checkAnswer2('σκοπό', 10, false)">Σκοπό</span>
+                    <span class="interactive" onclick="checkAnswer2('αποτέλεσμα', 10, true)">Αποτέλεσμα</span>
                     <span class="interactive" onclick="checkAnswer2('υπόθεση', 10, false)">Υπόθεση</span>
                     <span class="interactive" onclick="checkAnswer2('εναντίωση', 10, false)">Εναντίωση</span>
                 </div>
@@ -207,11 +205,11 @@
             <div id="exercise2-11" class="hidden">
                 <p><em>"Αν προσπαθήσεις περισσότερο, θα τα καταφέρεις."</em></p>
                 <div class="options">
-                    <span class="interactive" onclick="checkAnswer2('υπόθεση', 11, true)">Υπόθεση</span>
                     <span class="interactive" onclick="checkAnswer2('χρόνο', 11, false)">Χρόνο</span>
                     <span class="interactive" onclick="checkAnswer2('αιτία', 11, false)">Αιτία</span>
                     <span class="interactive" onclick="checkAnswer2('σκοπό', 11, false)">Σκοπό</span>
                     <span class="interactive" onclick="checkAnswer2('αποτέλεσμα', 11, false)">Αποτέλεσμα</span>
+                    <span class="interactive" onclick="checkAnswer2('υπόθεση', 11, true)">Υπόθεση</span>
                     <span class="interactive" onclick="checkAnswer2('εναντίωση', 11, false)">Εναντίωση</span>
                 </div>
                 <div id="feedback2-11" class="feedback"></div>
@@ -219,20 +217,20 @@
             <div id="exercise2-12" class="hidden">
                 <p><em>"Παρόλο που προσπάθησε πολύ, δεν κατάφερε να κερδίσει."</em></p>
                 <div class="options">
-                    <span class="interactive" onclick="checkAnswer2('εναντίωση', 12, true)">Εναντίωση</span>
                     <span class="interactive" onclick="checkAnswer2('χρόνο', 12, false)">Χρόνο</span>
                     <span class="interactive" onclick="checkAnswer2('αιτία', 12, false)">Αιτία</span>
                     <span class="interactive" onclick="checkAnswer2('σκοπό', 12, false)">Σκοπό</span>
                     <span class="interactive" onclick="checkAnswer2('αποτέλεσμα', 12, false)">Αποτέλεσμα</span>
                     <span class="interactive" onclick="checkAnswer2('υπόθεση', 12, false)">Υπόθεση</span>
+                    <span class="interactive" onclick="checkAnswer2('εναντίωση', 12, true)">Εναντίωση</span>
                 </div>
                 <div id="feedback2-12" class="feedback"></div>
             </div>
             <div id="exercise2-13" class="hidden">
                 <p><em>"Αφού τελείωσε το γεύμα του, έφυγε βιαστικά."</em></p>
                 <div class="options">
-                    <span class="interactive" onclick="checkAnswer2('χρόνο', 13, true)">Χρόνο</span>
                     <span class="interactive" onclick="checkAnswer2('αιτία', 13, false)">Αιτία</span>
+                    <span class="interactive" onclick="checkAnswer2('χρόνο', 13, true)">Χρόνο</span>
                     <span class="interactive" onclick="checkAnswer2('σκοπό', 13, false)">Σκοπό</span>
                     <span class="interactive" onclick="checkAnswer2('αποτέλεσμα', 13, false)">Αποτέλεσμα</span>
                     <span class="interactive" onclick="checkAnswer2('υπόθεση', 13, false)">Υπόθεση</span>
@@ -243,8 +241,8 @@
             <div id="exercise2-14" class="hidden">
                 <p><em>"Η γη ήταν εύφορη, γιατί το ποτάμι την πότιζε συνεχώς."</em></p>
                 <div class="options">
-                    <span class="interactive" onclick="checkAnswer2('αιτία', 14, true)">Αιτία</span>
                     <span class="interactive" onclick="checkAnswer2('χρόνο', 14, false)">Χρόνο</span>
+                    <span class="interactive" onclick="checkAnswer2('αιτία', 14, true)">Αιτία</span>
                     <span class="interactive" onclick="checkAnswer2('σκοπό', 14, false)">Σκοπό</span>
                     <span class="interactive" onclick="checkAnswer2('αποτέλεσμα', 14, false)">Αποτέλεσμα</span>
                     <span class="interactive" onclick="checkAnswer2('υπόθεση', 14, false)">Υπόθεση</span>
@@ -255,9 +253,9 @@
             <div id="exercise2-15" class="hidden">
                 <p><em>"Έβαλε το παλτό του, για να μην κρυώσει."</em></p>
                 <div class="options">
-                    <span class="interactive" onclick="checkAnswer2('σκοπό', 15, true)">Σκοπό</span>
                     <span class="interactive" onclick="checkAnswer2('χρόνο', 15, false)">Χρόνο</span>
                     <span class="interactive" onclick="checkAnswer2('αιτία', 15, false)">Αιτία</span>
+                    <span class="interactive" onclick="checkAnswer2('σκοπό', 15, true)">Σκοπό</span>
                     <span class="interactive" onclick="checkAnswer2('αποτέλεσμα', 15, false)">Αποτέλεσμα</span>
                     <span class="interactive" onclick="checkAnswer2('υπόθεση', 15, false)">Υπόθεση</span>
                     <span class="interactive" onclick="checkAnswer2('εναντίωση', 15, false)">Εναντίωση</span>
@@ -267,10 +265,10 @@
             <div id="exercise2-16" class="hidden">
                 <p><em>"Έκανε τόσο κρύο, ώστε πάγωσαν οι λίμνες."</em></p>
                 <div class="options">
-                    <span class="interactive" onclick="checkAnswer2('αποτέλεσμα', 16, true)">Αποτέλεσμα</span>
                     <span class="interactive" onclick="checkAnswer2('χρόνο', 16, false)">Χρόνο</span>
                     <span class="interactive" onclick="checkAnswer2('αιτία', 16, false)">Αιτία</span>
                     <span class="interactive" onclick="checkAnswer2('σκοπό', 16, false)">Σκοπό</span>
+                    <span class="interactive" onclick="checkAnswer2('αποτέλεσμα', 16, true)">Αποτέλεσμα</span>
                     <span class="interactive" onclick="checkAnswer2('υπόθεση', 16, false)">Υπόθεση</span>
                     <span class="interactive" onclick="checkAnswer2('εναντίωση', 16, false)">Εναντίωση</span>
                 </div>
@@ -279,11 +277,11 @@
             <div id="exercise2-17" class="hidden">
                 <p><em>"Εάν με χρειαστείς, θα είμαι στο γραφείο."</em></p>
                 <div class="options">
-                    <span class="interactive" onclick="checkAnswer2('υπόθεση', 17, true)">Υπόθεση</span>
                     <span class="interactive" onclick="checkAnswer2('χρόνο', 17, false)">Χρόνο</span>
                     <span class="interactive" onclick="checkAnswer2('αιτία', 17, false)">Αιτία</span>
                     <span class="interactive" onclick="checkAnswer2('σκοπό', 17, false)">Σκοπό</span>
                     <span class="interactive" onclick="checkAnswer2('αποτέλεσμα', 17, false)">Αποτέλεσμα</span>
+                    <span class="interactive" onclick="checkAnswer2('υπόθεση', 17, true)">Υπόθεση</span>
                     <span class="interactive" onclick="checkAnswer2('εναντίωση', 17, false)">Εναντίωση</span>
                 </div>
                 <div id="feedback2-17" class="feedback"></div>
@@ -291,36 +289,36 @@
             <div id="exercise2-18" class="hidden">
                 <p><em>"Ενώ είχε χρόνο, δεν διάβασε καθόλου."</em></p>
                 <div class="options">
-                    <span class="interactive" onclick="checkAnswer2('εναντίωση', 18, true)">Εναντίωση</span>
                     <span class="interactive" onclick="checkAnswer2('χρόνο', 18, false)">Χρόνο</span>
                     <span class="interactive" onclick="checkAnswer2('αιτία', 18, false)">Αιτία</span>
                     <span class="interactive" onclick="checkAnswer2('σκοπό', 18, false)">Σκοπό</span>
                     <span class="interactive" onclick="checkAnswer2('αποτέλεσμα', 18, false)">Αποτέλεσμα</span>
                     <span class="interactive" onclick="checkAnswer2('υπόθεση', 18, false)">Υπόθεση</span>
+                    <span class="interactive" onclick="checkAnswer2('εναντίωση', 18, true)">Εναντίωση</span>
                 </div>
                 <div id="feedback2-18" class="feedback"></div>
             </div>
             <div id="exercise2-19" class="hidden">
                 <p><em>"Παρά το γεγονός ότι ένιωθε κουρασμένος, συνέχισε να εργάζεται."</em></p>
                 <div class="options">
-                    <span class="interactive" onclick="checkAnswer2('εναντίωση', 19, true)">Εναντίωση</span>
                     <span class="interactive" onclick="checkAnswer2('χρόνο', 19, false)">Χρόνο</span>
                     <span class="interactive" onclick="checkAnswer2('αιτία', 19, false)">Αιτία</span>
                     <span class="interactive" onclick="checkAnswer2('σκοπό', 19, false)">Σκοπό</span>
                     <span class="interactive" onclick="checkAnswer2('αποτέλεσμα', 19, false)">Αποτέλεσμα</span>
                     <span class="interactive" onclick="checkAnswer2('υπόθεση', 19, false)">Υπόθεση</span>
+                    <span class="interactive" onclick="checkAnswer2('εναντίωση', 19, true)">Εναντίωση</span>
                 </div>
                 <div id="feedback2-19" class="feedback"></div>
             </div>
             <div id="exercise2-20" class="hidden">
                 <p><em>"Αν και φοβόταν, ανέβηκε στη σκηνή και μίλησε."</em></p>
                 <div class="options">
-                    <span class="interactive" onclick="checkAnswer2('εναντίωση', 20, true)">Εναντίωση</span>
                     <span class="interactive" onclick="checkAnswer2('χρόνο', 20, false)">Χρόνο</span>
                     <span class="interactive" onclick="checkAnswer2('αιτία', 20, false)">Αιτία</span>
                     <span class="interactive" onclick="checkAnswer2('σκοπό', 20, false)">Σκοπό</span>
                     <span class="interactive" onclick="checkAnswer2('αποτέλεσμα', 20, false)">Αποτέλεσμα</span>
                     <span class="interactive" onclick="checkAnswer2('υπόθεση', 20, false)">Υπόθεση</span>
+                    <span class="interactive" onclick="checkAnswer2('εναντίωση', 20, true)">Εναντίωση</span>
                 </div>
                 <div id="feedback2-20" class="feedback"></div>
             </div>
